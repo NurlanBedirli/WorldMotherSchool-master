@@ -77,7 +77,9 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
 
                 if(user != null)
                 {
-                    PasswordVerificationResult passwordVerification = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password);
+                    PasswordVerificationResult passwordVerification = passwordHasher
+                                    .VerifyHashedPassword(user, user.PasswordHash, model.Password);
+
                     if(passwordVerification == PasswordVerificationResult.Success)
                     {
                         SessionUserModel sessionUser = new SessionUserModel
