@@ -1,0 +1,131 @@
+﻿@using WorldMotherSchool.Models
+@model SlideFigure
+<div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" asp-controller="Account" asp-action="İndex">Dünya Ana Məktəbi</a>
+            <!-- User -->
+            <ul class="navbar-nav align-items-center d-none d-md-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                @if (Context.Session.GetObjectFromJson<SessionUserModel>("User") != null)
+                                {
+                                    var data = Context.Session.GetObjectFromJson<SessionUserModel>("User");
+                                    <span class="mb-0 text-sm  font-weight-bold">@data.FirstName  @data.SecondName</span>
+                                }
+                                else
+                                {
+                                    <span class="mb-0 text-sm  font-weight-bold">Sabina Əliyeva</span>
+                                }
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Xoş Gəlmisiz!</h6>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a asp-controller="Account" asp-action="LogOut" class="dropdown-item">
+                            <i class="ni ni-user-run"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+                <!-- Card stats -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col-xl-12 mb-12 mb-xl-0">
+                <div class="card bg-gradient-default shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="text-white mb-0">Slide Əlavə et</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <!-- Chart -->
+                        <form class="md-form col-md-4" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <div class="form-group col-md-3 slide-img" style="padding:0px !important;">
+                                <select style="box-shadow: 0px 0px 8px white;" id="inputState" asp-for="Language.Culture"
+                                        class="mdb-select md-form colorful-select dropdown-primary form-control">
+                                    <option>az</option>
+                                    <option>en</option>
+                                    <option>ru</option>
+                                </select>
+                            </div>
+                            <div class="form-group textarea">
+                                <label style="color:white">Caption</label>
+                                <input type="text" asp-for="Caption" name="Caption" />
+                            </div>
+                            <div class="file-field">
+                                <a class="btn-floating purple-gradient mt-0 float-left">
+                                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                                    <input type="file" asp-for="Image" name="Image" id="fileimage">
+                                </a>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" id="filetext" placeholder="Photo yüklə">
+                                </div>
+                            </div>
+                            <div class="form-group purpose-add">
+                                <button type="submit" class="btn btn-success">Əlavə Et</button>
+                            </div>
+                        </form>
+                        <div class="form-group  user-img col-md-8">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Sekil</th>
+                                        <th scope="col">Caption</th>
+                                        <th scope="col">Silmek</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if ((List<SlideFigureModel>)ViewBag.SlideImage != null)
+                                    {
+                                        int count = 0;
+                                        @foreach (var elm in (List<SlideFigureModel>)ViewBag.SlideImage)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <th scope="row">@count</th>
+                                                <td><img style="width: 45%;" src="~/img/@elm.Image" /></td>
+                                                <td><p>@elm.Caption</p></td>
+                                                <td><a class="btn btn-danger" asp-controller="Panel" asp-action="SlideDelete" asp-route-id="@elm.SlideFigureId">Sil</a><span>@elm.Cultur</span></td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">Dunya Ana Merkezi</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

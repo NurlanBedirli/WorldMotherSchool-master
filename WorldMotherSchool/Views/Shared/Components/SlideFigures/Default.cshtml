@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Default";
+}
+@using WorldMotherSchool.Models
+@model List<SlideFigure>
+<section class="slide-main">
+        <div class="owl-carousel">
+            @if (Model.Count != 0)
+            {
+                @foreach (var elm in Model)
+                {
+                    <div class="main-img">
+                        <img src="~/img/@elm.Image" class="img-responsive">
+                        <div class="caption col-xs-5 col-sm-4 col-md-3 col-lg-3">
+                            <h1>@elm.Caption</h1>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="main-img">
+                    <img src="~/img/3-1sch.jpg" class="img-responsive">
+                    <div class="caption col-xs-5 col-sm-4 col-md-3 col-lg-3">
+                        <h1>Mekteb</h1>
+                    </div>
+                </div>
+            }
+        </div>
+</section>

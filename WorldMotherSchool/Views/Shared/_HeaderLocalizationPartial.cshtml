@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNetCore.Localization
+@using WorldMotherSchool.Language
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var lang = requestCulture.RequestCulture.UICulture.Name;
+    var culture = SupportedLanguage.GetUILanguage(lang);
+}
+<div class="hader-bg">
+    <div class="container animatedParent header-two">
+        <div class="row animated fadeInUpShort go">
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4 logo-img">
+                <div class="logo">
+                    <img src="~/img/ib-logo.png" alt="dunya logo">
+                    <img src="~/img/ana mektebi logo yeni (1).png" alt="dunya logo">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 head-header">
+                <h2>Dünya Ana @Localizer["Məktəbi"]</h2>
+                <p>@Localizer["XƏZƏR UNİVERSİTETİ DÜNYA TƏHSİL KOMPLEKSİNDƏ BAĞÇA VƏ MƏKTƏBƏ QƏDƏR HAZIRLIQ"]</p>
+            </div>
+            <img src="~/img/XezerLoqo.png" class="xezerlogo"/>
+        </div>
+    </div>
+</div>
+
+<div class="header-menu">
+    <div class="container animatedParent ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!--Mobile Display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand visible-xs" href="#">MENU</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav drop-nav">
+                                <li><a asp-route-culture="@culture" asp-controller="home" asp-action="Index">@Localizer["Ana Səhifə"]</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Haqqımızda"]<span class="caret"></span></a>
+                                    <ul class="dropdown-menu animated fadeInDownShort go">
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="About">@Localizer["Bizim Haqda"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="purpose">@Localizer["Məqsədimiz"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="createschool">@Localizer["Məktəbin Yaranması"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="schoolhymn">@Localizer["Məktəbin Himni"]</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Hərtərəfli İnkişaf"]<span class="caret"></span></a>
+                                    <ul class="dropdown-menu animated fadeInDownShort go">
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="AzSection">@Localizer["Azerbaycan Bölməsi"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="RuSection">@Localizer["Rus Bölməsi"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="EngSection">@Localizer["İnglish bölməsi(IB)"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="AssociationSection">@Localizer["Dərnəklər"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="Excursions">@Localizer["Ekskursiyalar"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="DoctorSection">@Localizer["Həkim Nəzarəti"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="PsychologicalSection">@Localizer["Psixoloq Dəstəyi"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="HealthySection">@Localizer["Sağlam Qida"]</a></li>
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="SecuritySection">@Localizer["Təhlükəsizlik"]</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Galareya"]<span class="caret"></span></a>
+                                    <ul class="dropdown-menu animated fadeInDownShort go">
+                                        <li><a asp-route-culture="@culture" asp-controller="home" asp-action="GalareyaSection">@Localizer["Foto galareya"]</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-route-culture="@culture" asp-controller="home" asp-action="RuleAdmission">@Localizer["Qəbul Qaydaları"]</a></li>
+                                <li><a asp-route-culture="@culture" asp-controller="home" asp-action="Contact">@Localizer["Əlaqə"]</a></li>
+                                <li style="padding-top: 5px">
+                                    @await Html.PartialAsync("_LanguagePartial")
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+

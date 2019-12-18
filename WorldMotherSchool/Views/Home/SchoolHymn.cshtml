@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "SchoolHymn";
+}
+@using WorldMotherSchool.Models
+@model List<Photo>
+<section id="album-release" class="section_2">
+    <div class="section">
+        <div class="row">
+
+            <div class="title">
+                <div class="">
+                    <h1>@ViewBag.Translate</h1>
+                </div>
+            </div>
+            <div class="music wow fadeInRightBig">
+                <div class="mp3 mp3_1">
+                    <audio controls class="audio1"><source src="~/resources/dunya_song.mp3" type="audio/mpeg"></audio>
+                </div>
+            </div>
+            <div class="row word-hymns">
+                <div class="col-md-12 hymn-head">
+                    <h1>Dünyam</h1>
+                    <p>Balaca məktəblilərə</p>
+                </div>
+                <div class="col-md-12 hymn-word">
+                    <h2>Sözlər:<span>Hamlet İsaxanlı</span></h2>
+                    <h2>Musiqi:<span>Nailə İsaxanlı</span></h2>
+                </div>
+                <div class="words">
+                    <div class="col-md-4 hymn">
+                        <h3>Üfüqdə qızartı var,</h3>
+                        <h3>Gecə yandı-yaxıldı,</h3>
+                        <h3>Qızılı sarı oxlar</h3>
+                        <h3>Pəncərəmə taxıldı.</h3>
+                    </div>
+                    <div class="col-md-4 hymn">
+                        <h3>Günəş göydə göründü,</h3>
+                        <h3>Dünyam nura büründü.</h3>
+                        <h3>Xəyal gerçəyə döndü,</h3>
+                        <h3>Gərçək sanki nağıldı!</h3>
+                    </div>
+                    <div class="col-md-4 hymn">
+                        <h3>Təbiətə aşiq ol</h3>
+                        <h3>Oxu,yaz,yarat bol-bol,</h3>
+                        <h3>Gələcəyə gedən yol</h3>
+                        <h3>Düşəncədi,ağıldı!</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="j_c worlds-image" id="crss">
+                <div class="col cd_block wow fadeInLeftBig  owl-carousel">
+                    @if (Model != null)
+                    {
+                        @foreach (var elm in Model)
+                        {
+                            <div class="world-img">
+                                <img id="myImg" src="~/img/@elm.Image" style="width: 100%;">
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="purpose-img">
+                            <img id="myImg" src="~/img/rusdili1.jpg" style="width: 100%;">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <a class="prev" onclick="PlusIndex(-1)"><i class="fa fa-chevron-left pr" aria-hidden="true" id="prev"></i></a>
+        <span class="close">&times;</span>
+        <div id="modal-img">
+            @if (Model != null)
+            {
+                @foreach (var elm in Model)
+                {
+                    <img class="modal-content figure" id="img02" src="~/img/@elm.Image">
+                }
+            }
+            else
+            {
+                    <img id="myImg" src="~/img/rusdili1.jpg" style="width: 100%;">
+            }
+        </div>
+        <a class="next" onclick="PlusIndex(+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/js/carusel.js"></script>
+    <script src="~/js/modal.js"></script>
+}
+

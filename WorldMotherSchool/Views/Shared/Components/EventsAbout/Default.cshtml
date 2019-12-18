@@ -1,0 +1,113 @@
+﻿@using WorldMotherSchool.Language
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@{
+    ViewData["Title"] = "Default";
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var lang = requestCulture.RequestCulture.UICulture.Name;
+    var culture = SupportedLanguage.GetUILanguage(lang);
+}
+@using WorldMotherSchool.Models
+@model List<EventsAboutModel>
+<section class="events">
+    <div class="container">
+        <div class="row">
+            <div class=" event">
+                <div class="trend col-8">
+                    <h1>@Localizer["Hadisələr"]</h1>
+                </div>
+            </div>
+            <div class="card-deck">
+                <div class="ss multiple-items">
+                    @if (Model.Count >= 3)
+                    {
+                        @foreach (var elm in Model)
+                        {
+                            <div class="card col-md-12">
+                                <div class="card-two col-md-12">
+                                    <div class="imgs">
+                                        <img src="~/img/@elm.EventAboutPhotos.FirstOrDefault().Photo" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-body" style="margin: 0px;height: 45px;">
+                                            <h5 class="card-title">@elm.EventAboutLanguages.First().TextHead</h5>
+                                        </div>
+                                        <ul class="event-info">
+                                            <li class="category-name"><i class="fa fa-calendar" aria-hidden="true"></i><span>@elm.DateTime.ToString("dd/MM/yyyy")</span></li>
+                                        </ul>
+                                        @if (elm.EventAboutLanguages.First().TextLang.Length > 150)
+                                        {
+                                            <p class="card-text">@elm.EventAboutLanguages.First().TextLang.Substring(0, 150) ......!</p>
+                                        }
+                                        else
+                                        {
+                                            var length = elm.EventAboutLanguages.First().TextLang.Length;
+                                            <p class="card-text">@elm.EventAboutLanguages.First().TextHead.Substring(0, length)</p>
+                                        }
+                                        <a asp-action="Events" asp-controller="Home" asp-route-culture="@culture" asp-route-id="@elm.EventId" class="btn btn-primary ">Read more<i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="card col-md-12">
+                            <div class="card-two col-md-12">
+                                <div class="imgs">
+                                    <img src="~/img/usaq33.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dunya Mektebinde son zeng</h5>
+                                    <ul class="event-info">
+                                        <li class="category-name"><i class="fa fa-calendar" aria-hidden="true"></i><span>26/12/2019</span></li>
+                                    </ul>
+                                    <p class="card-text">Dünya MəktəbindəSON ZƏNG Bu gün SON ZƏNGİNİZDİR... Bu zəngə SON ZƏNG deyirlər, amma zənnimizcə, o son zəng deyil! - Çünki....</p>
+                                    <a href="#" class=" btn btn-primary ">Read more  <i class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card col-md-12">
+                            <div class="card-two col-md-12">
+                                <div class="imgs">
+                                    <img src="~/img/school.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dunya Mektebinde son zeng</h5>
+                                    <ul class="event-info">
+                                        <li class="category-name"><i class="fa fa-calendar" aria-hidden="true"></i><span>26/12/2019</span></li>
+                                    </ul>
+                                    <p class="card-text">Dünya MəktəbindəSON ZƏNG Bu gün SON ZƏNGİNİZDİR... Bu zəngə SON ZƏNG deyirlər, amma zənnimizcə, o son zəng deyil! - Çünki....</p>
+                                    <a href="#" class=" btn btn-primary ">Read more  <i class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card col-md-12">
+                            <div class="card-two col-md-12">
+                                <div class="imgs">
+                                    <img src="~/img/anadili3.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dunya Mektebinde son zeng</h5>
+                                    <ul class="event-info">
+                                        <li class="category-name"><i class="fa fa-calendar" aria-hidden="true"></i><span>26/12/2019</span></li>
+                                    </ul>
+                                    <p class="card-text">Dünya MəktəbindəSON ZƏNG Bu gün SON ZƏNGİNİZDİR... Bu zəngə SON ZƏNG deyirlər, amma zənnimizcə, o son zəng deyil! - Çünki....</p>
+                                    <a href="#" class=" btn btn-primary ">Read more  <i class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

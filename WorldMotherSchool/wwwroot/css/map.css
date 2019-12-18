@@ -1,0 +1,85 @@
+.map-container-5{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container-5 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
+    .view-cascade h5
+    {
+text-align: center;
+text-align: center;
+font-size: 2.25rem;
+color: cornsilk;
+font-family: inherit;
+padding: 23px;
+    }
+    .view-cascade
+    {
+        border-bottom-left-radius: 30px !important;
+        border-bottom-right-radius: 30px !important;
+    }
+    .peach-gradient {
+        background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+        height: 19%;
+        margin-bottom: 2%;
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        border-radius: .25rem;
+        margin-top: -38px;
+    }
+    .card-cascade
+    {
+        box-shadow: 0px 0px 5px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #map-container-google-9
+    {
+        box-shadow: 0px 0px 7px;
+    }
+    .map .card{
+        height: 400px !important;
+    }
+    .accent-1
+    {
+        background-color: #82b1ff!important;
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        width: 47px;
+        height: 47px;
+        position: relative;
+        z-index: 1;
+        vertical-align: middle;
+        display: inline-block;
+        overflow: hidden;
+        transition: all .2s ease-in-out;
+        margin: 10px;
+        border-radius: 50%;
+        padding: 0;
+        cursor: pointer;
+    }
+    .btn-floating i {
+        font-size: 2.25rem;
+        line-height: 47px;
+        display: inline-block;
+        width: inherit;
+        text-align: center;
+        color: #fff;
+    }
+    .btn-floating:hover {
+        box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+    }
+    .social-contact
+    {
+        margin-top: 18%;
+    }
+    .social-contact p{
+        font-size: 1em;
+        color: darkblue;
+        font-weight: 700;
+    }

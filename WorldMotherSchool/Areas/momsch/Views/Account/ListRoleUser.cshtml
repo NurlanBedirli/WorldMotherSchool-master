@@ -1,0 +1,112 @@
+﻿@using WorldMotherSchool.Models
+@model List<RoleUserModel>
+<div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Ana Səhifə</a>
+            <!-- User -->
+            <ul class="navbar-nav align-items-center d-none d-md-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                                <img alt="Image placeholder" src="./assets/img/theme/user-icon.png">
+                            </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                @if (Context.Session.GetObjectFromJson<SessionUserModel>("User") != null)
+                                {
+                                    var data = Context.Session.GetObjectFromJson<SessionUserModel>("User");
+                                    <span class="mb-0 text-sm  font-weight-bold">@data.FirstName  @data.SecondName</span>
+                                }
+                                else
+                                {
+                                    <span class="mb-0 text-sm  font-weight-bold">Sabina Əliyeva</span>
+                                }
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Xoş Gəlmisiz!</h6>
+                        </div>
+                        <a class="dropdown-item" asp-action="LogOut" asp-controller="Account">
+                            <i class="ni ni-user-run"></i>
+                            <span>Logout</span>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="#!" class="dropdown-item">
+                            <i class="ni ni-user-run"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+                <!-- Card stats -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col-xl-12 mb-12 mb-xl-0">
+                <div class="card bg-gradient-default shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="text-white mb-0">Rollar</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                      
+                        <div class="form-group  user-img col-md-12">
+                            <table class="table table-sm" style="color: white;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Ad</th>
+                                        <th scope="col">Soyad</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Rolu</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Count != 0)
+                                    {
+                                        @foreach (var user in Model)
+                                        {
+                                            <tr>
+                                                <td><p>@user.FirstName</p></td>
+                                                <td><p>@user.SecondName</p></td>
+                                                <td><p>@user.Email</p></td>
+                                                <td><p>@user.Role</p></td>
+                                                <td><a  class="btn btn-warning" asp-controller="Account" asp-action="UserDelete" asp-route-page="@user.RoleId">Sil</a></td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">Dunya Ana Merkezi</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

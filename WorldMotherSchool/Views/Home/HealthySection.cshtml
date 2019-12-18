@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using WorldMotherSchool.Models
+@model ResourcesViewModel
+<section id="album-release" class="section_2">
+    <div class="section">
+
+        <div class="title">
+            <div class="">
+                <h1>@ViewBag.Translate</h1>
+            </div>
+        </div>
+        <div class="purposes health-eat ql-editor ql-snow">
+            @if(Model.MainContent != null)
+            {
+            <ul class="purpose-list psixalog">
+                    @Html.Raw(Model.MainContent.Text)
+            </ul>
+            }
+        </div>
+        <div class="row j_c">
+            <div class="col cd_block wow fadeInLeftBig">
+                <div class="disc_cover">
+                    @if (Model.Photos != null)
+                    {
+                        foreach (var pht in Model.Photos)
+                        {
+                            <img class="disc" src="~/img/@pht.Image">
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

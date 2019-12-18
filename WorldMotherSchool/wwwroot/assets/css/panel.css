@@ -1,0 +1,85 @@
+.textarea
+{
+    margin-bottom: 4.5rem !important;
+}
+.file-path-wrapper
+{
+    overflow: hidden;
+    padding-left: 10px;
+    height: 2.5rem;
+}
+.fa-cloud-upload-alt
+{
+    display: inline-block;
+    width: inherit;
+    text-align: center;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 47px;
+}
+
+
+
+.btn-floating {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    width: 47px;
+    height: 47px;
+    background: linear-gradient(40deg,#ff6ec4,#7873f5) !important;
+}
+.file-field input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer !important;
+}
+.file-path-wrapper input{
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.md-form input[type=text]:not(.browser-default).valid
+{
+    border-bottom: 1px solid #00c851;
+    box-shadow: 0 1px 0 0 #00c851;
+}
+.md-form input[type=text]:not(.browser-default)
+{
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: white;
+}
+.purpose-add
+{
+    text-align: -webkit-center;
+    margin-top: 30px;
+}
+.ck-editor__editable{
+    min-height:300px;
+}

@@ -1,0 +1,60 @@
+﻿<section class="purpose">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="purposes ql-editor ql-snow">
+                    <div class="purpose-head ">
+                        <h2 class="title">@ViewBag.Translate</h2>
+                    </div>
+                    @if (Model.MainContent != null)
+                    {
+                        @Html.Raw(Model.MainContent.Text)
+                    }
+                </div>
+            </div>
+            <div class="col-md-6 prev-next" id="crss">
+                <div class="owl-carousel">
+                    @if (Model.Photos.Count != 0)
+                    {
+                        foreach (var elm in Model.Photos)
+                        {
+                            <div class="purpose-img">
+                                <img id="myImg" src="~/img/@elm.Image" alt="az_bolmesi" style="width: 100%;">
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="purpose-img">
+                            <img id="myImg" src="~/img/3-1sch.jpg" style="width: 100%;">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <a class="prev" onclick="PlusIndex(-1)"><i class="fa fa-chevron-left pr" aria-hidden="true" id="prev"></i></a>
+        <span class="close">&times;</span>
+        <div id="modal-img">
+            @if (Model.Photos.Count != 0)
+            {
+                foreach (var elm in Model.Photos)
+                {
+                    <img class="modal-content figure" id="img02" src="~/img/@elm.Image">
+                }
+            }
+            else
+            {
+                    <img class="modal-content figure" id="img02" src="~/img/3-1sch.jpg">
+            }
+            
+        </div>
+        <a class="next" onclick="PlusIndex(+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/js/carusel.js"></script>
+    <script src="~/js/modal.js"></script>
+}

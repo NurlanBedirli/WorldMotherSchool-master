@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@await Component.InvokeAsync("SlideFigures")
+@await Component.InvokeAsync("EventsAbout")
+
+@section Scripts{
+    <script src="~/js/carusel.js"></script>
+}

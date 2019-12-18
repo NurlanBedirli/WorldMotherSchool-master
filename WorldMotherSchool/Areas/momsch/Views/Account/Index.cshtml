@@ -1,0 +1,151 @@
+﻿@{
+    var data = Context.Session.GetObjectFromJson<SessionUserModel>("User");
+}
+    <div class="main-content">
+        <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+            <div class="container-fluid">
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Ana Səhifə</a>
+                <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+                    <div class="form-group mb-0">
+                    </div>
+                </form>
+                <!-- User -->
+                <ul class="navbar-nav align-items-center d-none d-md-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="media align-items-center">
+                                <span class="avatar avatar-sm rounded-circle">
+                                    <img alt="Image placeholder" src="./assets/img/theme/user-icon.png">
+                                </span>
+                                <div class="media-body ml-2 d-none d-lg-block">
+                                    @if (Context.Session.GetObjectFromJson<SessionUserModel>("User") != null)
+                                    {
+                                        var datas = Context.Session.GetObjectFromJson<SessionUserModel>("User");
+                                        <span class="mb-0 text-sm  font-weight-bold">@datas.FirstName  @datas.SecondName</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="mb-0 text-sm  font-weight-bold">Sabina Əliyeva</span>
+                                    }
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                            <div class=" dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">Welcome!</h6>
+                            </div>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-action="LogOut" asp-controller="Account">
+                                <i class="ni ni-user-run"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+            <div class="container-fluid">
+                <div class="header-body">
+                    <!-- Card stats -->
+                    <div class="row">
+                        <div class="header col-lg-12 d-flex align-items-center" style="min-height: 400px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                            <!-- Mask -->
+                            <span class="mask bg-gradient-default opacity-8"></span>
+                            <!-- Header container -->
+                            <div class="container-fluid d-flex align-items-center">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        @if (!string.IsNullOrEmpty(data.FirstName))
+                                        {
+                                            <h1 cslass="display-2 text-white" style="color:white">Salam @data.FirstName</h1>
+
+                                        }
+                                        else
+                                        {
+                                            <h1 cslass="display-2 text-white">Salam</h1>
+
+                                        }
+                                        @if (!string.IsNullOrEmpty(data.Id))
+                                        {
+                                            <a asp-controller="Account" asp-action="EditProfile" asp-route-id="@data.Id" class="btn btn-info">Profil</a>
+
+                                        }
+                                        else
+                                        {
+                                            <a asp-controller="Account" asp-action="EditProfile" asp-route-id="2" class="btn btn-info">Profil</a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page content -->
+                        <div class="container-fluid mt--7">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card card-profile shadow" style="    width: 50%;margin: auto;">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-5 order-lg-5">
+                                                <div class="card-profile-image">
+                                                    <a href="#">
+                                                        @if (data.Photo != null)
+                                                        {
+                                                            <img src="~/img/@data.Photo" class="rounded-circle">
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/assets/img/theme/user-icon.png" class="rounded-circle">
+                                                        }
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0 pt-md-4">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                                                        <div>
+                                                            @if (!string.IsNullOrEmpty(data.FirstName) || !string.IsNullOrEmpty(data.SecondName))
+                                                            {
+                                                                <h3>
+                                                                    @data.FirstName<span class="font-weight-light"></span>
+                                                                </h3>
+                                                                <h3>
+                                                                    @data.SecondName<span class="font-weight-light"></span>
+                                                                </h3>
+                                                            }
+                                                            else
+                                                            {
+                                                                <h3>
+                                                                    .<span class="font-weight-light"></span>
+                                                                </h3>
+                                                                <h3>
+                                                                    .<span class="font-weight-light"></span>
+                                                                </h3>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">Dunya Ana Merkezi</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>

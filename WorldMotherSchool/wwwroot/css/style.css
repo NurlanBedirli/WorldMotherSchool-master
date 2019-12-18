@@ -1,0 +1,247 @@
+
+/* NEW ALBUM RELEASE */
+
+/*--------------------*/
+
+#album-release {
+    position: relative;
+    background-color: rgb(245, 248, 250);
+    overflow: hidden;
+    padding-bottom: 97px;
+}
+/*.owl-height
+{
+    height:700px !important;
+}*/
+.section {
+    margin-top: 5%;
+}
+.section_bg_image {
+    position: absolute;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.sec_2_content {
+    font-family: 'Open Sans';
+    line-height: 30px;
+}
+
+.sec_2_content * {
+    font-size: 18px;
+    line-height: 30px;
+    color: #4b4b4b;
+    margin-bottom: 0px;
+}
+
+.sec_2_content .cta a {
+    letter-spacing: 1px;
+}
+
+#album-release .col {
+    min-height: auto;
+    padding: 0;
+}
+
+#album-release .buy {
+    margin-top: 49px;
+}
+
+#album-release .section>.row {
+    margin: 0px;
+}
+.disc_cover
+{
+    width: 50%;
+    margin: auto;
+}
+.disc_cover img {
+    width: 100%;
+    top: -5%;
+}
+
+.disc {
+    position: relative;
+    left: 15px;
+    z-index: 99;
+}
+
+.cd {
+    position: absolute;
+    left: 37%;
+    top: 2% !important;
+    width: 53% !important;
+    z-index: 9;
+    -webkit-animation: spin 15s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 15s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.cta {
+    margin-top: 30px;
+}
+
+.cta a {
+    font-family: 'Oswald';
+    font-size: 15px;
+    color: rgb(171, 46, 186);
+    padding: 15px 40px 15px 40px;
+    border: 1px solid rgb(171, 46, 186);
+    border-radius: 50px;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.cta a:hover {
+    border-color: rgb(171, 46, 186);
+    background-color: rgb(171, 46, 186);
+    color: #fff;
+}
+
+#album-release .cta a {
+    color: rgb(171, 46, 186);
+    border-color: rgb(171, 46, 186);
+    letter-spacing: 1px;
+}
+
+#album-release .cta a:hover {
+    border-color: rgb(171, 46, 186);
+    color: #fff;
+}
+
+#album-release .cta i {
+    margin-left: 10px;
+}
+
+.j_c {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+.title
+{
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #52406e;
+    /*margin-bottom: 22px;
+    margin-bottom: 6%;*/
+}
+
+.hymn-head {
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #52406e;
+}
+.hymn-word {
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #52406e;
+    margin-bottom: 35px;
+}
+.hymn-word h2
+{
+    font-size:24px;
+}
+.hymn {
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #062f3c;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    border-bottom-color: blue;
+}
+.worlds-image {
+    width: 50%;
+    margin: auto;
+}
+    .worlds-image .owl-nav {
+        width: 90% !important;
+    }
+    /*.worlds-image .owl-prev {
+        width: 8%;
+    }
+    .worlds-image .owl-next {
+        width: 8%;
+    }*/
+.word-hymns {
+    margin-bottom: 40px !important;
+}
+.hymn h3 {
+    font-size: 22px;
+}
+ .words{
+     width:70%;
+     margin:auto;
+ }
+
+
+@media only screen and ( max-width: 768px)
+{
+    .disc_cover
+    {
+      width: 90%;
+      padding: 0px !important;
+      margin-left: 10px;
+    }
+    .mp3_1
+    {
+        width: 100% !important;
+    }
+    .mp3_1 .audio1
+    {
+        width: 95% !important;
+    }
+    .worlds-image
+    {
+        width:100%;
+    }
+        /*.worlds-image .owl-next > span {
+            color: white !important;
+            right: 14px !important;
+            top: -9px;
+        }
+        .worlds-image .owl-prev > span {
+            left: 15px !important;
+            top: -9px;
+        }*/
+        /*.worlds-image .owl-prev {
+            height: 47px;
+            
+            width: 10%;
+        }
+        .worlds-image .owl-next {
+            height: 47px;
+            width: 10%;
+        }*/
+}
+
+/*--------------------*/
+
+/* NEW ALBUM RELEASE END */
+
