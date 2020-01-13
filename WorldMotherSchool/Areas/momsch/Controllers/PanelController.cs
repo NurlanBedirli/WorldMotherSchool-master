@@ -663,19 +663,31 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
         {
             if(id.HasValue)
             {
-                var eventData = schoolDb.EventAbouts
-                                      .Where(x=> x.Id == id)
-                                         .Include(x => x.EventAboutLanguages)
-                                              .Include(y => y.EventAboutPhotos)
-                                                              .ToList();
-                if (eventData == null)
-                    return BadRequest();
-                foreach(var evnt in eventData)
+                try
                 {
-                    schoolDb.EventAbouts.Remove(evnt);
-                    await schoolDb.SaveChangesAsync();
+                    var eventData = schoolDb.EventAbouts
+                                 .Where(x => x.Id == id)
+                                    .Include(x => x.EventAboutLanguages)
+                                         .Include(y => y.EventAboutPhotos)
+                                                         .FirstOrDefault();
+                    if (eventData == null)
+                        return BadRequest();
 
+                    if(eventData.EventAboutPhotos.Count > 0)
+                    {
+                        foreach (var Evntphoto in eventData.EventAboutPhotos)
+                        {
+                            imageEnviroment.DeleteImagePath(Evntphoto.Photo, hostingEnviroment);
+                        }
+                    }
+                    schoolDb.EventAbouts.Remove(eventData);
+                    await schoolDb.SaveChangesAsync();
                 }
+                catch(Exception exp)
+                {
+                    ModelState.AddModelError("", exp.Message);
+                }
+           
             }
             return RedirectToAction(nameof(EventList));
         }

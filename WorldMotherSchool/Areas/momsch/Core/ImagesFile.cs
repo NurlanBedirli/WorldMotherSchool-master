@@ -28,8 +28,6 @@ namespace WorldMotherSchool.Areas.momsch.Core
             }
             return fileNames;
         }
-
-
         public bool DeleteImagePath(string Photo, IHostingEnvironment hosting)
         {
             bool delete = false;
@@ -48,6 +46,5 @@ namespace WorldMotherSchool.Areas.momsch.Core
             }
             return delete;
         }
-
     }
 }

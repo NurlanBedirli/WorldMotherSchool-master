@@ -1,5 +1,8 @@
-body{
-    overflow-x:hidden;
+body {
+    overflow-x: hidden;
+    background: url(https://www.chargify.com/images/waveback-bd24e6b4.svg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 @media only screen and (min-width: 320px) and (max-width: 768px) {
     .demo {
@@ -71,7 +74,7 @@ body{
     #hed .navbar {
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
-        -o-border-radius: 0px;
+        /*-o-border-radius: 0px;*/
         border-radius: 0px;
     }
     #hed .navbar-default .navbar-collapse,
@@ -439,7 +442,7 @@ body{
     #hed .navbar {
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
-        -o-border-radius: 0px;
+        /*-o-border-radius: 0px;*/
         border-radius: 0px;
     }
     #hed .navbar-default .navbar-collapse,
@@ -700,7 +703,7 @@ body{
     #hed .navbar {
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
-        -o-border-radius: 0px;
+        /*-o-border-radius: 0px;*/
         border-radius: 0px;
     }
     #hed .navbar-default .navbar-collapse,
@@ -740,7 +743,7 @@ body{
     /* Styles */
     /* Header Background Color */
     #hed .pre-hader-bg {
-        background-color: #062f3c;
+        background-color: #016ca0;
         display: block;
         height: auto;
     }
@@ -811,7 +814,7 @@ body{
     #hed .navbar {
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
-        -o-border-radius: 0px;
+        /*-o-border-radius: 0px;*/
         border-radius: 0px;
     }
     #hed .navbar-default .navbar-collapse,
@@ -1144,9 +1147,10 @@ color: rgb(158, 148, 2)
     width: 100%;
     margin-top: -10px;
 }
-.card-two
-{
+.card-two {
     box-shadow: 0px 0px 10px;
+    border-bottom-left-radius: 37px;
+    border-top-right-radius: 23px;
 }
 .card-body
 {
@@ -1243,12 +1247,12 @@ h2 {
 }
 .card-title
 {
-    letter-spacing: 1x;
+    letter-spacing: 1px;
     color: #52406e;
 }
 .video-head h2
 {
-    letter-spacing: 1x;
+    letter-spacing: 1px;
     color: #52406e;
 }
 .py-4
@@ -1340,10 +1344,10 @@ footer
     .video .owl-prev {
         width: 4.5%;
     }*/
-.purpose
+/*.purpose
 {
     margin-bottom: 6%;
-}
+}*/
 /*.purpose-head
 {
     margin-bottom: 5%;
@@ -1363,13 +1367,15 @@ footer
 .purpose-img
 {
     margin-top: 49%;
-    box-shadow: 0px 0px 6px rgb(87, 86, 86);
+    /*box-shadow: 0px 0px 6px rgb(87, 86, 86);*/
     cursor:pointer;
 }
-.purpose-img img
-{
-    cursor:pointer;
-}
+    .purpose-img img {
+        cursor: pointer;
+        height: 600px;
+        margin: 0 auto;
+        object-fit: contain;
+    }
 .crs .owl-next
 {
     /*width: 7% !important;*/
@@ -1538,11 +1544,26 @@ font-size: 15px !important;
 {
     color: rgb(65, 64, 64)
 }
- .schollcreate
- {
-    margin-top: 1%;
-    margin-bottom: 6%;
- }
+.schollcreate {
+    /*margin-top: 1%;*/
+    /*margin-bottom: 6%;*/
+    background: url(https://www.chargify.com/images/waveback-bd24e6b4.svg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.purpose {
+    background: url(https://www.chargify.com/images/waveback-bd24e6b4.svg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.section_2 {
+    background: url(https://www.chargify.com/images/waveback-bd24e6b4.svg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+#crss {
+    margin-bottom: 10%;
+}
  .schollcreate .purpose-img
  {
      width: 60%;
@@ -1587,10 +1608,12 @@ font-size: 15px !important;
     color: #52406e;
 }
 
-.event-img img
-{
-width:70%;
-box-shadow: 0px 0px 16px;
+.event-img img {
+    width: 70%;
+    /*box-shadow: 0px 0px 16px;*/
+    height: 700px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 .event-img
 {
@@ -1667,19 +1690,20 @@ border: 3px solid;
     text-align: center;
     margin: 7px;
     color: white;
+
 }
 .caption:hover{
     box-shadow: 0px 0px 22px #45cafc;
     background: linear-gradient(40deg,#303f9f,#45cafc)!important;
     transition: 1s ease-in;
 }
-.events p
-{
+.events p {
     font-size: 17px;
     font-style: italic;
     font-family: sans-serif;
     font-weight: 400;
     color: darkblue;
+    height: 112px;
 }
 .imgs {
     width: 100%;
@@ -1705,6 +1729,10 @@ p {
     color: darkblue;
 }
 
-
+.about-child-event {
+    background: url(https://www.chargify.com/images/waveback-bd24e6b4.svg);
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 
