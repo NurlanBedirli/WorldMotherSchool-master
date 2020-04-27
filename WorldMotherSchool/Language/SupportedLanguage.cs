@@ -10,7 +10,7 @@ namespace WorldMotherSchool.Language
         public static string DefaultLanguage { get; private set; } = "az-Latn-AZ";
         private static readonly Dictionary<string, string> _languages;
 
-        static SupportedLanguage()
+       static SupportedLanguage()
         {
             _languages = new Dictionary<string, string>()
             {

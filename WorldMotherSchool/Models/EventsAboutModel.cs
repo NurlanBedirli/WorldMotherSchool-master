@@ -9,6 +9,7 @@ namespace WorldMotherSchool.Models
     {
         public int EventId { get; set; }
         public DateTime DateTime { get; set; }
+        public string Link { get; set; }
         public List<EventAboutLanguage> EventAboutLanguages { get; set; }
         public List<EventAboutPhoto> EventAboutPhotos { get; set; }
     }

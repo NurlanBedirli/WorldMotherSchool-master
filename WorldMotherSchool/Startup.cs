@@ -131,7 +131,6 @@ namespace WorldMotherSchool
                     template: "{culture}/{controller}/{action}/{id?}",
                     defaults: new { culture = "az", controller = "Home", action = "Index" });
             });
-
         }
     }
 }

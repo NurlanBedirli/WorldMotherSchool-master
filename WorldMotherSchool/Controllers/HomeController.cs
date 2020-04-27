@@ -508,6 +508,7 @@ namespace WorldMotherSchool.Controllers
                                                                                    .Select(y => new EventsAboutModel
                                                                                    {
                                                                                        DateTime = y.DateTime,
+                                                                                       Link = y.Link,
                                                                                        EventAboutLanguages = y.EventAboutLanguages.Where(x => x.LanguageId == cultureId).ToList(),
                                                                                        EventAboutPhotos = y.EventAboutPhotos,
                                                                                        EventId = y.Id

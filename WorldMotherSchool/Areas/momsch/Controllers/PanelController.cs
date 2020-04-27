@@ -98,7 +98,6 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
                         {
                             ModelState.AddModelError("", $"Siz artiq  *{main.Culture}* dilinde **{ViewName}**  bolmesine elave etmisiz ");
                         }
-                   
                     }
                     else
                     {
@@ -435,6 +434,7 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
                         EventAbout eventAbout = new EventAbout
                         {
                             DateTime = eventAbouts.DateTime,
+                            Link = eventAbouts.Link
                         };
                         await schoolDb.EventAbouts.AddAsync(eventAbout);
                         await schoolDb.SaveChangesAsync();
@@ -492,7 +492,6 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
         }
 
 
-
         [HttpGet]
         [Route("/events")]
         public async Task<ActionResult> EventList()
@@ -532,6 +531,7 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
 
             EventAboutModel eventAboutModel = new EventAboutModel();
             eventAboutModel.DateTime = data.DateTime;
+            eventAboutModel.Link = data.Link;
             options.Value.EventAboutsId = (int)id;
 
             int? Azid = schoolDb.Languages.Where(x => x.Culture == "az").FirstOrDefault().Id;
@@ -591,6 +591,7 @@ namespace WorldMotherSchool.Areas.momsch.Controllers
 
                         var eventAbout = await schoolDb.EventAbouts.Where(x => x.Id == options.Value.EventAboutsId).FirstOrDefaultAsync();
                         eventAbout.DateTime = eventAbouts.DateTime;
+                        eventAbout.Link = eventAbouts.Link;
 
                         int count = 0;
                         foreach (var photo in Photo)

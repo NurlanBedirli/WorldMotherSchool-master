@@ -36,7 +36,14 @@
             <div class="events col-sm-12 col-md-12">
                 @foreach (var elm in Model)
                 {
-                    <p>@elm.EventAboutLanguages.First().TextLang</p>
+                    if (elm.Link == null)
+                    {
+                        <p>@elm.EventAboutLanguages.First().TextLang</p>
+                    }
+                    else
+                    {
+                        <p>@elm.EventAboutLanguages.First().TextLang<a style="color: red;border-bottom: 1px solid;margin-left: 20px;" href="@elm.Link">@elm.EventAboutLanguages.First().TextHead</a></p>
+                    }
                 }
             </div>
         </div>

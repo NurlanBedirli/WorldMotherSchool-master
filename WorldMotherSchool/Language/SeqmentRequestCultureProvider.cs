@@ -11,7 +11,8 @@ namespace WorldMotherSchool.Language
     {
         public Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
         {
-            ProviderCultureResult cultureResult = null;
+
+        ProviderCultureResult cultureResult = null;
             if(httpContext.Request.Path.HasValue)
             {
                 string[] segments = httpContext.Request.Path.Value.Split("/");

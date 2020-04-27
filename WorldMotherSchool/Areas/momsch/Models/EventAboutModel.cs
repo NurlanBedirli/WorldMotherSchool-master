@@ -19,13 +19,14 @@ namespace WorldMotherSchool.Areas.momsch.Models
         public DateTime DateTime { get; set; }
         public string Photo { get; set; }
         [Required(ErrorMessage = "Az dilinde Text hissesi bosdur")]
-        [MinLength(350, ErrorMessage = "Textin uzunlugu 350 kicikdir")]
+        [MinLength(200, ErrorMessage = "Textin uzunlugu 200 kicikdir")]
         public string TextAz { get; set; }
         [Required(ErrorMessage = "En dilinde Text hissesi bosdur")]
-        [MinLength(350, ErrorMessage = "Textin uzunlugu 350 kicikdir")]
+        [MinLength(200, ErrorMessage = "Textin uzunlugu 200 kicikdir")]
         public string TextEn { get; set; }
         [Required(ErrorMessage = "Ru dilinde Text hissesi bosdur")]
-        [MinLength(350,ErrorMessage ="Textin uzunlugu 350 kicikdir")]
+        [MinLength(200,ErrorMessage ="Textin uzunlugu 200 kicikdir")]
         public string TextRu { get; set; }
+        public string Link { get; set; }
     }
 }
